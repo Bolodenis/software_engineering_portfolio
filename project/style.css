@@ -1,0 +1,328 @@
+/* General Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body { 
+    margin: 0;
+    padding-top: 70px; /* Space for fixed navbar */
+    background: url(./IMG/wave-haikei.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar */
+#nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    background: rgba(0, 0, 0, 0.8); /* Background to prevent content overlap */
+    padding: 15px 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+#nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    justify-content: center;
+    gap: 20px;
+}
+
+#nav li a {
+    text-decoration: none;
+    color: lightgray;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: border-bottom 0.3s ease-out;
+}
+
+#nav li a:hover {
+    border-bottom: 4px solid gold;
+}
+
+/* Section Styling */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* About Section */
+#aboutme {
+    text-align: center;
+    max-width: 80%;
+    margin: auto;
+}
+
+p, li {
+    font-size: 18px;
+    color: lightgray;
+    line-height: 1.6;
+}
+
+/* Profile Image */
+.custom {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Projects Section */
+#pro {
+    text-align: center;
+    padding: 20px;
+}
+
+.main_card {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 30%; /* Enlarged card size */
+    max-width: 450px; /* Increased maximum width */
+    overflow: hidden;
+    background: none; /* Removed background border */
+    border-radius: 0; /* Removed rounded borders */
+}
+
+.card .img2 {
+    width: 90%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.card .container {
+    display: block; /* Hide text content */
+}
+.card a{
+    text-decoration: none;
+    color: gold;
+}
+
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Animation */
+#one  {
+    animation: colorChange 4s;
+    animation-iteration-count: 2;
+    display: block; /* Ensure block behavior */
+    margin-top: 20px; /* Optional: Adds some space between the elements */
+}
+
+hr  {
+    animation: colorChange 4s;
+    animation-iteration-count: 2;
+}
+
+@keyframes colorChange {
+    from { color: black; }
+    to { color: gold; }
+}
+
+#hr1 {
+    width: 65%;
+    border: 3px solid gold;
+    font-weight: bold;
+}
+
+#hr2 {
+    width: 40%;
+    border: 3px solid gold;
+    font-weight: bold;
+}
+
+#hr3 {
+    width: 15%;
+    font-weight: bold;
+    border: 3px solid gold;
+}
+
+.container {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 80%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #FFD700;
+}
+
+/* Contact Form Styling */
+.contact-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.contact-container h1 {
+    color: gold;
+}
+
+.contact-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-container label {
+    font-size: 16px;
+    color: lightgray;
+    text-align: left;
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.contact-container button {
+    background: gold;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.contact-container button:hover {
+    background: darkgoldenrod;
+}
+
+/* Social Media Icons */
+.social-icons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: white;
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+/* Hamburger Menu */
+.hamburger {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+    padding: 10px;
+    text-align: right;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger icon */
+    }
+
+    #nav {
+        display: none; /* Hide navigation initially */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    #nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #nav li {
+        padding: 10px;
+    }
+
+    /* Show navigation when active */
+    .nav-show {
+        display: flex !important;
+        flex-direction: column;
+    }
+}
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+    .main_card {
+        gap: 15px;
+    }
+
+    .card {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .main_card {
+        gap: 10px;
+    }
+
+    .card {
+        width: 60%;
+    }
+
+    #nav ul {
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        background-color: grey;
+    }
+
+    .main_card {
+        gap: 5px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    #nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .contact-container {
+        max-width: 90%;
+    }
+}
